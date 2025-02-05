@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: url('https://wallpapers.com/images/high/pink-peony-flower-field-dpjpown2jswaj2wp.webp') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ff3366;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 30px;
+            color: #ff3366;
+        }
+        .cat-img {
+            width: 200px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .yes {
+            background-color: #28a745;
+            color: white;
+        }
+        .no {
+            background-color: #dc3545;
+            color: white;
+            position: absolute;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pilar Nory Catrileo Monsalve ¿Quieres ser mi San Valentín? ❤️</h1>
+        <img id="catImage" src="/machapaesperanding.png" alt="Gatito" class="cat-img">
+        <img id="newImage" src="/abrazados.png" alt="Pareja de pingüinos" class="cat-img hidden">
+        <div class="buttons">
+            <button class="yes" onclick="showMessage('Sabía que aceptarías princesa 💖')">Sí</button>
+            <button class="no" onmouseover="moveButton()">No</button>
+        </div>
+        <h2 id="message"></h2>
+    </div>
+
+    <script>
+        function showMessage(text) {
+            document.getElementById('message').innerText = text;
+            document.getElementById('catImage').classList.add('hidden');
+            document.getElementById('newImage').classList.remove('hidden');
+        }
+
+        function moveButton() {
+            let button = document.querySelector('.no');
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
